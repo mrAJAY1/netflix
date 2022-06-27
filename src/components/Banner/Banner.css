@@ -1,0 +1,73 @@
+.banner {
+    background-size: cover;
+    height: 448px;
+    color: #ffff;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.content {
+    padding-left: 15px;
+    padding-top: 140px;
+    height: 190px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 0.3rem;
+}
+
+
+.btn {
+    color: #ffff;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(51, 51, 51, 0.5);
+    margin-right: 1rem;
+    cursor: pointer;
+    /* Transitions */
+    transition: color ease-in-out 0.2s;
+    transition: background-color ease-in-out 0.2s;
+
+}
+
+.btn:hover {
+    color: #000;
+    background-color: #e6e6e6;
+}
+
+.description {
+    width: 45rem;
+    line-height: 1.3;
+    padding-top: 1rem;
+    font-size: 1rem;
+    max-height: 200px;
+    max-width: 360px;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 5;
+}
+
+.fade_bottom {
+    height: 8rem;
+    background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.5), #111);
+}
