@@ -5,18 +5,18 @@ import axios from "../../axios";
 import YouTube from "react-youtube";
 
 function Banner({ movie, setMovie }) {
-  const [urlId, setUrlId] = useState("");
-  const bannerOnClick = (id) => {
-    axios
-      .get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
-      .then((response) => {
-        if (response.data.results.length !== 0) {
-          setUrlId(response.data.results[0]);
-        } else {
-          console.log("Array empty");
-        }
-      });
-  }
+  // const [IdURl, setIdUrl] = useState("");
+  // const bannerOnClick = (id) => {
+  //   axios
+  //     .get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
+  //     .then((response) => {
+  //       if (response.data.results.length !== 0) {
+  //         setIdUrl(response.data.results[0]);
+  //       } else {
+  //         console.log("Array empty");
+  //       }
+  //     });
+  // }onClick={bannerOnClick(movie.id)}
   useEffect(() => {
     axios
       .get(`trending/all/week?api_key=${API_KEY}&language=en-US`)
@@ -29,13 +29,13 @@ function Banner({ movie, setMovie }) {
         );
       });
   }, []);
-  const opts = {
-    height: "390",
-    width: "100%",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
+  // const opts = {
+  //   height: "390",
+  //   width: "100%",
+  //   playerVars: {
+  //     autoplay: 1,
+  //   },
+  // };
   return (
     <div
       style={{
@@ -48,14 +48,14 @@ function Banner({ movie, setMovie }) {
         <div className="content">
           <h1 className="title">{movie.title ? movie.title : movie.name}</h1>
           <div className="banner-btn">
-            <button className="btn" onClick={bannerOnClick(movie.id)}>Play</button>
+            <button className="btn" >Play</button>
             <button className="btn">My List</button>
           </div>
           <h1 className="description">{movie.overview}</h1>
         </div>
-        <div className="fade_bottom"></div>
+          <div className="fade_bottom"></div>
       </div>
-      {urlId && <YouTube videoId={urlId.key} opts={opts} />}
+      {/* {<IdURl></IdURl> && <YouTube videoId={IdURl.key} opts={opts} />} */}
     </div>
 
   );
